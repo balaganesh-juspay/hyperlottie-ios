@@ -1,5 +1,0 @@
-import Lottie
-
-class TestLottie {
-    
-}

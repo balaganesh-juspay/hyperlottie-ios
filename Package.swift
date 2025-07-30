@@ -9,22 +9,19 @@ let package = Package(
     products: [
         .library(
             name: "HyperLottie",
-            targets: ["HyperLottie", "HyperLottieDependencies"]
+            targets: ["HyperLottie"]
         )
     ],
     dependencies: [
-        .package(name: "lottie-ios", url: "https://github.com/airbnb/lottie-ios.git", from: "3.5.0"),
+        .package(name: "lottie-ios", url: "https://github.com/airbnb/lottie-ios.git", "3.5.0"..<"5.0.0"),
     ],
     targets: [
         .target(
             name: "HyperLottie",
-            path: "Sources/HyperLottie",
-        ),
-        .target(
-            name: "HyperLottieDependencies",
             dependencies: [
                 .product(name: "Lottie", package: "lottie-ios"),
-            ]
+            ],
+            path: "Sources/HyperLottie",
         )
     ]
 )
